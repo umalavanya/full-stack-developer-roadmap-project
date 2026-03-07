@@ -28,6 +28,7 @@ div{
     height: 10px ;
     width: 10px ;
     background-color: blueviolet ;
+    border-radius: 10px ;;
 }
 
 .container{
@@ -36,6 +37,7 @@ div{
     width: 90%;
     height: 600px ;
     border-radius: 10px ;
+    padding: 10px ;
 }
 
 .concept{
