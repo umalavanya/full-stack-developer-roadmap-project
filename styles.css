@@ -146,6 +146,16 @@ body {
     hyphens: auto;
 }
 
+#concept-search{
+    padding: 10px ;
+    width: 90% ;
+    border-radius: 10px ;
+    box-shadow: 5px 5px 5px 5px var(--light-gray)
+    
+
+
+}
+
 /* Make concept cards grid-like on larger screens */
 @media (min-width: 768px) {
     .concept {
