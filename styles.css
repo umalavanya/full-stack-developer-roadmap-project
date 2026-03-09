@@ -314,11 +314,12 @@ tr:hover {
     :root {
         /* Even larger on very small screens for readability */
         --fs-base: clamp(1rem, 5vw, 1.125rem);
-        --fs-medium: clamp(1.125rem, 6vw, 1.25rem);
+        --fs-medium: clamp(2rem, 6vw, 3rem);
     }
 
     .concept {
         padding: var(--space-sm);
+        font-size: var(--fs-medium) ;
     }
 
     .concept-heading {
@@ -335,11 +336,11 @@ tr:hover {
     }
 
     th {
-        font-size: var(--fs-small);
+        font-size: var(--fs-medium);
     }
 
     td {
-        font-size: var(--fs-small);
+        font-size: var(--fs-medium);
     }
 }
 
