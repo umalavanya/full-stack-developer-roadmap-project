@@ -266,6 +266,22 @@ const conceptsData = [
 
 
         ]
+    },
+    {
+        heading: "JS - Strict Mode",
+        items: [
+            `Strict Mode in JavaScript
+In JavaScript, the strict mode is introduced in the ES5 (ECMAScript 2009). The purpose behind introducing the "strict mode" is to make the JavaScript code more secure.
+The 'use strict' literal expression is used to add the strict mode in the JavaScript code. It removes the silent errors from the code, such as you can't use the variable without declaration, you can't modify the readable property of the object, etc.
+`,
+`'use strict';`,
+`Uses of Strict Mode:
+Error prevention,
+Safer code,
+Future Compatibility`,
+`Strict mode in global scope and local scope`
+
+        ]
     }
 ];
 
