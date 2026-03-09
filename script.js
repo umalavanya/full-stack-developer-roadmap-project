@@ -144,7 +144,8 @@ const conceptsData = [
                   `Date: Date()<br>
                   let Date = new Date()`,
                   `JavaScript is a dynamically typed language like Python and Ruby. So, it decides the variable's data type at the runtime but not at the compile time. We can initialize or reassign the value of any data type to the JavaScript variables.`,
-                  `The typeof operator allows you to check the type of the variable.`
+                  `The typeof operator allows you to check the type of the variable.`,
+                  
         ]
     },
     {
@@ -152,6 +153,117 @@ const conceptsData = [
         items: [
             `Implicit, Explicit`,
             `Implicit is called as coercion --> automatically done by JavaScript. Ex: + for concatenation`,
+            `Converting to String --> Implicit `,
+            `Converting to Number --> Implicit`,
+            `Converting to Boolean --> Implicit <br>
+            When you use the Nullish (!!) operator with any variable, it implicitly converts its value to the boolean value.
+            <br>
+            <code>num = !!0; // !0 = true, !!0 = false <br>
+                  num = !!1; // !1 = false, !!1 = true <br>
+                  str = !!"";<br> // !"" = true, !!"" = false <br>
+                  str = !!"Hello";<br> // !"Hello" = false, !!"Hello" = true <br>
+                  </code>`,
+            `Null to Number (Implicit conversion):
+            In JavaScript, the null represents the empty. So, null automatically gets converted to 0 when we use it as an operand of the arithmetic operator.`,
+            `Undefined with Number and Boolean (Implicit conversion)
+            Using the undefined with the 'number' or 'boolean' value always gives the NaN in the output. Here, NaN means not a number.`,
+            `Programmer changes the type manually --> Explicit conversion`,
+            `String()  --> Explicit number, null, boolean to String`,
+            `toString() --> its a method of Number object. used to convert number to String`,
+            `Number() --> string to Number, also unary +`,
+            `Number('100'); // Converts '100' to 100
+             Number(false); // Converts false to 0
+            Number(null); // Converts null to 0<br>
+            num = +"200"; // Using the unary operator`,
+            `parseFloat() --> To exrtact the floating point number from the string <br>
+            parseInt() --> To extract the integer from the string<br>
+            + --> its an unary operator`,
+            `Think about the following<br>
+            Number(null)<br>Number("200")<br>Number(undefined)`,
+            `Converting to Boolean: Boolean<br>Examples: Boolean(100), Boolean(0), Boolean(""),Boolean("Hi"),Boolean(null)`,
+            `Converting Date to String/number: <br> Number()<br>getTime()<br>The numeric date represents the total number of milliseconds since 1st January 1970.`,
+            `Number(Date), date.getTime(), String(Date), date.toString()`,
+            `<table>
+  <tr>
+    <th>Value</th>
+    <th>String conversion</th>
+    <th>Number conversion</th>
+    <th>Boolean conversion</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>"0"</td>
+    <td>0</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>"1"</td>
+    <td>1</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>"1"</td>
+    <td>"1"</td>
+    <td>1</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>"0"</td>
+    <td>"0"</td>
+    <td>0</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>""</td>
+    <td>""</td>
+    <td>0</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>"Hello"</td>
+    <td>"Hello"</td>
+    <td>NaN</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>true</td>
+    <td>"true"</td>
+    <td>1</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>false</td>
+    <td>"false"</td>
+    <td>0</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>null</td>
+    <td>"null"</td>
+    <td>0</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>undefined</td>
+    <td>"undefined"</td>
+    <td>NaN</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>[50]</td>
+    <td>"50"</td>
+    <td>50</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>[50, 100]</td>
+    <td>"[50, 100]"</td>
+    <td>NaN</td>
+    <td>true</td>
+  </tr>
+</table>`
+
 
         ]
     }
