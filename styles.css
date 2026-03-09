@@ -1,32 +1,280 @@
 *,
 *::before,
-*::after{
-    margin:0 ;
-    padding: 0 ;
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: bisque ;
-    display:flex ;
-    justify-content: center ;
-    align-items: center ;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --primary: #781c68;
+    --primary-dark: #5a1650;
+    --primary-light: #a52a8f;
+    --secondary: #319DA0;
+    --secondary-dark: #267a7c;
+    --secondary-light: #4fc9cc;
+    --tertiary: #FFD39A;
+    --quartiary: #FFF5E1;
 
+    /* Neutral colors */
+    --dark: #2d2d2d;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --white: #ffffff;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Border radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Typography */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --line-height-normal: 1.6;
+    --line-height-heading: 1.2;
 }
 
-.container{
-    border: 1px solid black ;
-    border-radius: 10px ;
-    padding: 10px ;
-    margin: 10px ;
+body {
+    background: linear-gradient(135deg, var(--tertiary) 0%, #ffd9a8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    min-height: 100vh;
+    line-height: var(--line-height-normal);
+    color: var(--dark);
+    padding: 20px;
 }
 
-.concept{
-    border: 1px solid rgb(17, 17, 18) ;
-    margin: 10px ;
-    padding: 5px ;
-    font-weight: 400 ;
-    box-shadow: 2px 2px 2px 2px gray ;
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--secondary-light);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    margin: 20px;
+    max-width: 1400px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    transition: box-shadow var(--transition-normal);
+}
 
+.container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.concept-heading {
+    border-bottom: 3px solid var(--primary);
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 700;
+    color: var(--primary);
+    padding-bottom: 10px;
+    position: relative;
+    letter-spacing: -0.5px;
+}
+
+.concept-heading::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: var(--radius-sm);
+}
+
+.concept {
+    border: none;
+    margin: 25px 0;
+    padding: 25px;
+    font-weight: 400;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    background-color: var(--quartiary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.concept::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(120, 28, 104, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.concept:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+    border-left-width: 6px;
+}
+
+.concept:hover::before {
+    opacity: 1;
+}
+
+.concept:last-child {
+    margin-bottom: 0;
+}
+
+span {
+    font-weight: 700;
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    padding: 0 2px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #45a049;
+}
+
+td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .concept {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .concept-heading {
+        margin-top: 40px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .concept {
+        padding: 15px;
+    }
+
+    .concept-heading {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 8px 10px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    }
+
+    .container {
+        background-color: rgba(45, 45, 45, 0.95);
+        border-color: var(--primary-light);
+    }
+
+    .concept-heading {
+        color: var(--secondary-light);
+        border-bottom-color: var(--secondary-light);
+    }
+
+    .concept {
+        background-color: var(--dark);
+        color: var(--light-gray);
+    }
+
+    span {
+        color: var(--secondary-light);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus states for better accessibility */
+.concept:focus-within {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
