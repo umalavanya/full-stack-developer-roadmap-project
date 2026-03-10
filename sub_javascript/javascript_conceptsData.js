@@ -279,7 +279,330 @@ The 'use strict' literal expression is used to add the strict mode in the JavaSc
 Error prevention,
 Safer code,
 Future Compatibility`,
-`Strict mode in global scope and local scope`
+`Strict mode in global scope and local scope`,
+`Mistakes that shouldn't make in the strict mode:
+<ol>
+<li>You can't initialize the variable with a value without declaring it.</li>
+<li>You can't use the object without declaring it.</li>
+<li>You can't delete objects using the delete keyword.</li>
+<li>You can't delete the object prototype in the strict mode.</li>
+<li>Deleting the function using the delete operator is not allowed.</li>
+<li>You can't have a function with duplicate parameter values.</li>
+<li>You can't assign octal numbers to variables.</li>
+<li>You can't use escape characters.</li>
+<li>You can't use reserved keywords like eval, arguments, public, etc., as an identifier.</li>
+<li>You can't write to the readable property of the object.</li>
+<li>You can't assign values to the getters function.</li>
+<li>In the strict mode, when you use the 'this' keyword inside the function, it refers to the reference object through which the function is invoked. If the reference object is not specified, it refers to the undefined value.</li>
+<li>You can't use the 'with' statement in the strict mode.</li>
+<li>You can't use the eval() function to declare the variables for the security reason.</li>
+<li>You can't use the keywords as an identifier that are reserved for the future. Below keywords are reserved for the future −
+•	implements
+•	interface
+•	package
+•	private
+•	protected
+</li>
+</ol>`
+
+        ]
+    },
+    {
+        heading: "Reserved Keywords",
+        items: [
+            `
+            <code>
+            abstract,
+            arguments,
+            await,
+            boolean,
+            break,
+            byte,
+            case,
+            catch,
+            char,
+            class,
+            const,
+            continue,
+            debugger,
+            default,
+            delete,
+            do,
+            double,
+            else,
+            enum,
+            eval,
+            export,
+            extends,
+            false,
+            final,
+            finally,
+            float,
+            for,
+            function,
+            goto,
+            if,
+            implements,
+            import,
+            in,
+            instanceof,
+            int,
+            interface,
+            let,
+            long,
+            native,
+            new,
+            null,
+            package,
+            private,
+            protected,
+            public,
+            short,
+            static,
+            super,
+            return,
+            switch,
+            synchronied,
+            this,
+            throw,
+            throws,
+            transient,
+            true,
+            try,
+            typeof,
+            var,
+            void,
+            volatile,
+            yield,
+            while,
+            with
+
+            </code>
+
+
+            `
+
+        ]
+    },
+    {
+        heading: "Operators",
+        items:[
+            `Arithmatic operators: `,
+            `Comparision Operators: 
+            Comparing null, undefined and NaN
+In JavaScript, null, undefined and NaN are the falsy values that are not converted to zero (0) for the comparison.
+0 == null; // returns false
+0 == undefined; // returns false
+0 == NaN; // returns false
+null and undefined are weekly equal.
+null == undefined; // returns true
+null === undefined; // returns false
+The type of NaN is number but it is not equal to zero. Interestingly NaN is not equal to NaN itself.
+NaN == NaN; // returns false
+`,
+            `Logical Operators :
+            The logical operators in JavaScript are generally used with Boolean operands and return a boolean value. There are mainly three types on logical operators in JavaScript - && (AND), || (OR), and ! (NOT). These operators are used to control the flow the program.
+Although the logical operators are typically used with Boolean values, they can be used with any type. For each non-boolean value, the operator converts to a boolean. The falsy values are converted to false and truthy values to true.
+There are six falsy values in JavaScript: false, null, undefined, 0 (zero), "" (empty string), NaN. The value other than falsy values are treated as truthy values. So non zero numbers, non-empty strings, etc., are truthy values.
+The && and || operators return the value of one of the operands based on condition. So if the operands are non-boolean, they return a non-boolean value. The ! operator always returns a Boolean value.
+The operands may be literals, variables or expressions. These are first evaluated to boolean equivalent before performing the logical operation.
+In the below table, we have given the logical operators with its description and example. Lets assume: x = true, y = false.
+
+
+`,
+            `Bitwise Operators`,
+            `Assignment Operators`,
+            `Conditional operators:
+            
+            `,
+            `typeof Operator: 
+
+            <table>
+            <tr>
+            <th>Type</th>
+            <th>String returned by type</th>
+            </tr>
+            
+            <tr>
+                <td>Number</td>
+                <td>"number"</td>
+            </tr>
+
+            <tr>
+            <td>String</td>
+            <td>"string"</td>
+            </tr>
+
+            <tr>
+            <td>Boolean</td>
+            <td>"boolean"</td>
+            </tr>
+
+            <tr>
+            <td>Object</td>
+            <td>"object"</td>
+            </tr>
+
+            
+
+            <tr>
+            <td>Function</td>
+            <td>"function"</td>
+            </tr>
+
+
+            
+
+            <tr>
+            <td>Undefined</td>
+            <td>"undefined"</td>
+            </tr>
+
+            
+
+            <tr>
+            <td>Null</td>
+            <td>"object"</td>
+            </tr>
+
+            
+
+            <tr>
+            <td>Symbol</td>
+            <td>symbol</td>
+            </tr>
+
+            
+
+            <tr>
+            <td>Bigint</td>
+            <td>"bigint"</td>
+            </tr>
+
+
+
+            
+            
+            </table>`,
+
+
+
+            `Examples:<br>
+            <table>
+            
+              <tr><td>
+              typeof 10; // returns 'number'<br/>
+typeof 'Hello World'; // returns 'string'<br/>
+typeof true; // returns 'boolean'<br/>
+typeof {name:"Tutorialspoint"}; // returns 'object'<br/>
+typeof function foo(){};// returns 'function'<br/>
+typeof undefined; // returns 'undefined'<br/>
+typeof null; // returns 'object'<br/>
+typeof Symbol(); // returns 'symbol'<br/>
+typeof 10n; // returns 'bigint'<br/>
+</td></tr>
+
+<tr>
+<td>
+typeof 10; //returns "number"; <br/>
+typeof -10; //returns "number";<br/>
+typeof 0; //returns "number";<br/>
+typeof 10.20; //returns "number";<br/>
+typeof Math.LN10; //returns "number";<br/>
+typeof Infinity; //returns "number";<br/>
+typeof NaN; //returns "number";<br/>
+typeof Number('1'); //returns "number";<br/>
+typeof Number('hello'); //returns "number";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+typeof "10"; //returns "string";<br/>
+typeof ""; //returns "string";<br/>
+typeof "Hello World"; //returns "string";<br/>
+typeof String(10); //returns "string";<br/>
+typeof typeof 2; //returns "string";<br/>
+</td></tr>
+
+
+
+<tr>
+<td>
+typeof true; //returns "boolean";<br/>
+typeof false; //returns "boolean";<br/>
+typeof Boolean(10); //returns "boolean";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+typeof Symbol(); //returns "symbol";<br/>
+typeof Symbol("unique values"); //returns "symbol";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+typeof undefined; //returns "undefined";<br/>
+typeof null; //returns "object";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+const obj = {age: 23};<br/>
+typeof obj; //returns "object";<br/><br/>
+const arr = [1,2,3,4];<br/>
+typeof arr; //returns "object";<br/><br/>
+typeof new Date(); //returns "object";<br/>
+typeof new String("Hello World"); //returns "object";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+const myFunc = function(){return "Hello world"};<br/>
+typeof myFunc; //returns "function";<br/><br/>
+const func = new Function();<br/>
+typeof func; //returns "function";<br/><br/>
+class myClass {constructor() { }}<br/>
+typeof myClass; // returns "function";<br/>
+</td></tr>
+
+
+
+
+<tr>
+<td>
+typeof 100n; // returns "bigint"<br/>
+
+</td></tr>
+
+
+
+<tr>
+<td>
+let numbers = [1, 2, 3];
+typeof numbers; // Output: 'object'
+</td></tr>`,
+`Nullish Operator:  Nullish Coalescing Operator (??)<br />
+The Nullish Coalescing operator in JavaScript is represented by two question marks (??). It takes two operands and returns the first operand if it is not null or undefined. Otherwise, it returns the second operand. 
+It is a logical operator introduced in ES2020.<br />
+op1 ?? op2 `,
+`Short-circuiting: 
+`
+
 
         ]
     }

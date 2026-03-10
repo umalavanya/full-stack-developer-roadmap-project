@@ -5,280 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full‑stack roadmap · learn by tech</title>
+    <link rel="stylesheet" href="all_styles/index_styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        body {
-            background: #f4f7fb;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ----- NAVBAR (technologies) ----- */
-        .navbar {
-            background: #1e293b;
-            color: white;
-            padding: 0.9rem 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 2rem;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .logo {
-            font-weight: 600;
-            font-size: 1.3rem;
-            letter-spacing: -0.3px;
-            background: #3b82f6;
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem 1.2rem;
-            list-style: none;
-            font-weight: 500;
-        }
-
-        .nav-item {
-            cursor: pointer;
-            padding: 0.5rem 0.8rem;
-            border-radius: 40px;
-            transition: background 0.2s, color 0.2s;
-            background: transparent;
-            color: #e2e8f0;
-            font-size: 1rem;
-        }
-
-        .nav-item:hover {
-            background: #334155;
-            color: white;
-        }
-
-        .nav-item.active {
-            background: #3b82f6;
-            color: white;
-        }
-
-        /* ----- MAIN LAYOUT (side pane + content) ----- */
-        .dashboard {
-            display: flex;
-            flex: 1;
-            min-height: calc(100vh - 72px);
-            /* navbar height approx */
-        }
-
-        /* side pane – left (15–20%) */
-        .side-pane {
-            width: 18%;
-            /* between 15 and 20% */
-            background: white;
-            border-right: 1px solid #dde3e9;
-            padding: 1.8rem 1rem;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.02);
-            transition: width 0.1s;
-        }
-
-        .side-pane h3 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            color: #64748b;
-            margin-bottom: 1.5rem;
-            padding-left: 0.5rem;
-        }
-
-        .subject-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .subject-item {
-            padding: 0.9rem 1rem 0.9rem 1.2rem;
-            border-radius: 16px;
-            font-weight: 500;
-            color: #1e293b;
-            cursor: pointer;
-            transition: all 0.15s;
-            border-left: 4px solid transparent;
-            background-color: #f8fafc;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-            word-break: break-word;
-        }
-
-        .subject-item:hover {
-            background: #eef2f6;
-            border-left-color: #94a3b8;
-        }
-
-        .subject-item.active-subject {
-            background: #e0f2fe;
-            border-left-color: #0284c7;
-            font-weight: 600;
-            color: #0c4a6e;
-        }
-
-        /* main content area – right side */
-        .main-area {
-            flex: 1;
-            background: #f9fcff;
-            padding: 2rem 2.5rem;
-            overflow-y: auto;
-        }
-
-        .content-card {
-            background: white;
-            border-radius: 32px;
-            padding: 2.2rem 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: 0 20px 35px -8px rgba(0, 34, 64, 0.1);
-            border: 1px solid #e9edf2;
-        }
-
-        .tech-tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.2px;
-        }
-
-        .content-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0b1e33;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-        }
-
-        .content-description {
-            color: #334155;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            border-left: 5px solid #3b82f6;
-            padding-left: 1.5rem;
-            background: #f0f7ff;
-            padding: 1.2rem 1.8rem;
-            border-radius: 20px;
-        }
-
-        .roadmap-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            margin: 2rem 0 1rem;
-        }
-
-        .step {
-            background: #f6f9fe;
-            padding: 1.2rem 1.8rem;
-            border-radius: 20px;
-            border: 1px solid #dee9f2;
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .step-badge {
-            background: #1e293b;
-            color: white;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 60%;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .step-text {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: #1a2634;
-        }
-
-        .empty-state {
-            color: #6c7a8e;
-            font-style: italic;
-            background: #f1f5f9;
-            padding: 2rem;
-            border-radius: 30px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, #d9e2ef, transparent);
-            margin: 2rem 0 1.5rem;
-        }
-
-        .footer-hint {
-            color: #5f6c80;
-            font-size: 0.95rem;
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        /* mobile/responsive tweaks */
-        @media (max-width: 750px) {
-            .dashboard {
-                flex-direction: column;
-            }
-
-            .side-pane {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #dde3e9;
-            }
-
-            .navbar {
-                gap: 1rem;
-                padding: 0.9rem 1rem;
-            }
-
-            .main-area {
-                padding: 1.5rem;
-            }
-
-            .content-card {
-                padding: 1.5rem;
-            }
-        }
+        
     </style>
 </head>
 
 <body>
     <!-- Navbar – lists technologies (Java, Spring Boot, JavaScript) -->
     <nav class="navbar">
-        <span class="logo">📘 roadmap</span>
+        <span class="logo">📘 Full Stack Developement RoadMap - Uma Lavanya</span>
         <ul class="nav-links" id="techNavList">
             <li class="nav-item active" data-tech="java">☕ Java</li>
             <li class="nav-item" data-tech="springboot">🌱 Spring Boot</li>
+            <li class="nav-item" data-tech="">Spring</li>
             <li class="nav-item" data-tech="javascript">⚡ JavaScript</li>
+            <li class="nav-item" data-tech="">HTML</li>
+            <li class="nav-item" data-tech="">CSS</li>
+            <li class="nav-item" data-tech="">React</li>
+            <li class="nav-item" data-tech="">AWS</li>
+            <li class="nav-item" data-tech="">SQL</li>
+            <li class="nav-item" data-tech="">MongoDB</li>
+            <li class="nav-item" data-tech="">Node</li>
+            <li class="nav-item" data-tech="">Express</li>
+            <li class="nav-item" data-tech="">BootStrap</li>
+            <li class="nav-item" data-tech="">Tailwind</li>
+            <li class="nav-item" data-tech="">RestAPI</li>
+            <li class="nav-item" data-tech="">DSA-Java</li>
+            <li class="nav-item" data-tech="">LeetCode problems</li>
+            <li class="nav-item" data-tech="">Docker/Kubertenes</li>
+            <li class="nav-item" data-tech="">Agile/Scrum</li>
+            <li class="nav-item" data-tech="">Mern Stack</li>
+            
             <!-- extra techs can be added easily -->
         </ul>
+        <div class="second-header">
+            <ul class="nav-links">
+                <li class="nav-item" data-tech=""><a href="sub_javascript/javascript_index.html">JavaScript</a></li>
+
+            </ul>
+
+        </div>
     </nav>
 
     <!-- main container: side pane (subjects) + content area -->
@@ -299,280 +66,17 @@
         </main>
     </div>
 
-    <script>
-        (function () {
-            // ---------- DATA MODELS (full‑stack learning roadmaps) ----------
-            const roadmapData = {
-                java: {
-                    displayName: 'Java',
-                    subjects: [
-                        'Java basics',
-                        'OOP / Core concepts',
-                        'Collections & Streams',
-                        'Exception handling',
-                        'Multithreading',
-                        'I/O & Files',
-                        'JDBC / Database'
-                    ],
-                    details: {
-                        'Java basics': {
-                            title: '☕ Java fundamentals',
-                            description: 'Start with syntax, data types, loops, and conditionals. Understand JVM, JRE, JDK.',
-                            steps: ['Write your first "Hello World"', 'Primitives & arrays', 'Control flow (if/switch, for/while)']
-                        },
-                        'OOP / Core concepts': {
-                            title: 'Object‑oriented programming',
-                            description: 'Classes, objects, inheritance, polymorphism, encapsulation, abstraction.',
-                            steps: ['Create classes and constructors', 'Use extends & implements', 'Overloading & overriding']
-                        },
-                        'Collections & Streams': {
-                            title: 'Collections Framework & Stream API',
-                            description: 'Master List, Set, Map, Queue. Functional operations with streams.',
-                            steps: ['ArrayList vs LinkedList', 'HashMap & TreeSet', 'Stream filter/map/collect']
-                        },
-                        'Exception handling': {
-                            title: 'Exceptions & assertions',
-                            description: 'Checked/unchecked, try-catch-finally, try-with-resources, custom exceptions.',
-                            steps: ['Handle multiple exceptions', 'Create custom exception', 'Use finally block']
-                        },
-                        'Multithreading': {
-                            title: 'Multithreading & concurrency',
-                            description: 'Thread class, Runnable, synchronized, locks, executors, fork-join.',
-                            steps: ['Extend Thread / implement Runnable', 'Synchronization', 'Thread pools']
-                        },
-                        'I/O & Files': {
-                            title: 'File I/O (NIO.2)',
-                            description: 'Read/write files, buffered streams, Path, Files utility.',
-                            steps: ['FileReader/FileWriter', 'NIO Files.lines()', 'Serialization']
-                        },
-                        'JDBC / Database': {
-                            title: 'JDBC and persistence',
-                            description: 'Connect to DB, execute queries, PreparedStatement, connection pools (overview).',
-                            steps: ['Load driver & get connection', 'CRUD operations', 'Batch updates']
-                        }
-                    }
-                },
-                springboot: {
-                    displayName: 'Spring Boot',
-                    subjects: [
-                        'Spring core (IoC)',
-                        'Spring Boot basics',
-                        'REST APIs',
-                        'Data JPA / Hibernate',
-                        'Security',
-                        'Microservices',
-                        'Testing (MockMvc)'
-                    ],
-                    details: {
-                        'Spring core (IoC)': {
-                            title: '🌱 Inversion of Control / DI',
-                            description: 'Beans, ApplicationContext, wiring, component scan.',
-                            steps: ['@Component / @Bean', 'Field vs constructor injection', 'Profiles']
-                        },
-                        'Spring Boot basics': {
-                            title: '⚙️ Spring Boot essentials',
-                            description: 'Auto-configuration, starters, application.properties, devtools.',
-                            steps: ['Create Spring Initializr project', 'Understand @SpringBootApplication', 'External configuration']
-                        },
-                        'REST APIs': {
-                            title: 'Building RESTful web services',
-                            description: '@RestController, @RequestMapping, HTTP methods, JSON binding.',
-                            steps: ['Create GET / POST endpoints', 'Handle path variables', 'ResponseEntity & error handling']
-                        },
-                        'Data JPA / Hibernate': {
-                            title: 'Spring Data JPA & Hibernate',
-                            description: 'Entities, repositories, derived queries, @Transactional.',
-                            steps: ['Define JPA entity', 'CrudRepository / JpaRepository', 'JPQL / native queries']
-                        },
-                        'Security': {
-                            title: 'Spring Security',
-                            description: 'Authentication, authorization, user details, JWT (optional).',
-                            steps: ['In-memory auth', 'UserDetailsService', 'Method security']
-                        },
-                        'Microservices': {
-                            title: 'Microservices with Spring Cloud',
-                            description: 'Service discovery, API gateway, config server, resilience4j.',
-                            steps: ['Build independent services', 'Eureka client/server', 'Feign clients']
-                        },
-                        'Testing (MockMvc)': {
-                            title: 'Testing in Spring Boot',
-                            description: '@WebMvcTest, @DataJpaTest, MockBean, TestRestTemplate.',
-                            steps: ['Slice tests', 'MockMvc requests', 'Test service layer']
-                        }
-                    }
-                },
-                javascript: {
-                    displayName: 'JavaScript',
-                    subjects: [
-                        'JS fundamentals',
-                        'DOM manipulation',
-                        'ES6+ modern features',
-                        'Async JS (promises)',
-                        'Fetch API & AJAX',
-                        'Node.js basics',
-                        'React / frontend intro'
-                    ],
-                    details: {
-                        'JS fundamentals': {
-                            title: '⚡ JavaScript core',
-                            description: 'Variables, scopes, functions, objects, type coercion.',
-                            steps: ['var / let / const', 'Functions & arrow functions', 'Arrays & object literals']
-                        },
-                        'DOM manipulation': {
-                            title: 'Document Object Model',
-                            description: 'Select elements, modify content, events, dynamic styling.',
-                            steps: ['getElementById / querySelector', 'addEventListener', 'Create/append elements']
-                        },
-                        'ES6+ modern features': {
-                            title: 'Modern JavaScript (ES6+)',
-                            description: 'Destructuring, spread/rest, template literals, modules, classes.',
-                            steps: ['Arrow functions & this', 'Modules import/export', 'Map, Set, symbols']
-                        },
-                        'Async JS (promises)': {
-                            title: 'Asynchronous JavaScript',
-                            description: 'Callbacks, Promises, async/await, event loop.',
-                            steps: ['Create Promise', 'Consume with then/catch', 'Async/await error handling']
-                        },
-                        'Fetch API & AJAX': {
-                            title: 'Fetch & HTTP requests',
-                            description: 'GET, POST, headers, handling responses, axios (optional).',
-                            steps: ['Basic fetch GET', 'POST with JSON', 'Handle errors']
-                        },
-                        'Node.js basics': {
-                            title: 'Node.js / back‑end JS',
-                            description: 'npm, modules, fs, http, Express minimal.',
-                            steps: ['Run JS outside browser', 'CommonJS vs ES modules', 'Simple HTTP server']
-                        },
-                        'React / frontend intro': {
-                            title: 'React & component thinking',
-                            description: 'Components, props, state, hooks (useState, useEffect).',
-                            steps: ['Create react app', 'Functional components', 'useState & events']
-                        }
-                    }
-                }
-            };
+    
 
-            // ---------- UI references ----------
-            const navItems = document.querySelectorAll('.nav-item');
-            const subjectHeading = document.getElementById('subjectHeading');
-            const subjectListEl = document.getElementById('subjectListContainer');
-            const contentCard = document.getElementById('contentCard');
-
-            // state
-            let currentTech = 'java';            // default
-            let currentSubject = 'Java basics';  // default for java
-
-            // helper: render side pane subjects based on currentTech
-            function renderSubjects() {
-                const tech = roadmapData[currentTech];
-                if (!tech) return;
-
-                subjectHeading.textContent = `📌 ${tech.displayName} subjects`;
-
-                const subjects = tech.subjects;
-                let htmlStr = '';
-                subjects.forEach(sub => {
-                    const activeClass = (sub === currentSubject) ? 'active-subject' : '';
-                    htmlStr += `<li class="subject-item ${activeClass}" data-subject="${sub}">${sub}</li>`;
-                });
-                subjectListEl.innerHTML = htmlStr;
-
-                // attach click listeners to subject items
-                document.querySelectorAll('.subject-item').forEach(item => {
-                    item.addEventListener('click', (e) => {
-                        const subjectName = e.currentTarget.dataset.subject;
-                        if (subjectName) {
-                            // update current subject
-                            currentSubject = subjectName;
-                            // re-render subjects (to reflect active style)
-                            renderSubjects();
-                            // render main content for (currentTech, currentSubject)
-                            renderMainContent();
-                        }
-                    });
-                });
-            }
-
-            // render main content (right area) based on currentTech + currentSubject
-            function renderMainContent() {
-                const tech = roadmapData[currentTech];
-                if (!tech) return;
-
-                // if currentSubject somehow not present in this tech, pick first subject
-                if (!tech.subjects.includes(currentSubject)) {
-                    currentSubject = tech.subjects[0];
-                    renderSubjects(); // update active style
-                }
-
-                const detail = tech.details[currentSubject];
-                if (!detail) {
-                    contentCard.innerHTML = `<div class="empty-state">✨ No details for "${currentSubject}" yet.</div>`;
-                    return;
-                }
-
-                // build steps HTML if steps exist
-                let stepsHtml = '';
-                if (detail.steps && detail.steps.length) {
-                    stepsHtml = '<div class="roadmap-steps">';
-                    detail.steps.forEach((step, idx) => {
-                        stepsHtml += `<div class="step"><span class="step-badge">${idx + 1}</span><span class="step-text">${step}</span></div>`;
-                    });
-                    stepsHtml += '</div>';
-                }
-
-                const cardHtml = `
-          <span class="tech-tag">${tech.displayName} · roadmap</span>
-          <div class="content-title">${detail.title}</div>
-          <div class="content-description">${detail.description}</div>
-          ${stepsHtml}
-          <hr />
-          <div class="footer-hint">
-            <span>🧩 master step by step · </span>
-            <span>click subjects on left to navigate</span>
-          </div>
-        `;
-
-                contentCard.innerHTML = cardHtml;
-            }
-
-            // handle tech change (navbar click)
-            function switchTech(techKey) {
-                currentTech = techKey;
-                const tech = roadmapData[techKey];
-                // set first subject as default for that tech
-                currentSubject = tech.subjects[0];
-
-                // update active class on navbar
-                navItems.forEach(item => {
-                    const itemTech = item.dataset.tech;
-                    if (itemTech === techKey) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-
-                // re-render side pane and main
-                renderSubjects();      // will also sync active subject
-                renderMainContent();
-            }
-
-            // ----- attach navbar listeners -----
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    const tech = e.currentTarget.dataset.tech;
-                    if (tech && roadmapData[tech]) {
-                        switchTech(tech);
-                    }
-                });
-            });
-
-            // ----- initial render (Java active, 'Java basics' subject) -----
-            switchTech('java');
-
-            // small fallback: if subject list gets empty clicks – already handled in renderSubjects
-        })();
-    </script>
+    <!-- Load scripts in correct order -->
+    <script src="js/data/roadmapData.js"></script>
+    <script src="js/data/index.js"></script>
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/components/subjectList.js"></script>
+    <script src="js/components/contentCard.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

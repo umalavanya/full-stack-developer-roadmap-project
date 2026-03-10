@@ -1,0 +1,12 @@
+js/
+├── main.js              # Main entry point - initializes everything
+├── data/
+│   ├── roadmapData.js   # Core data models
+│   └── index.js         # Data exports
+├── components/
+│   ├── navbar.js        # Navigation bar handling
+│   ├── subjectList.js   # Subject list rendering and interactions
+│   └── contentCard.js   # Main content rendering
+├── utils/
+│   └── helpers.js       # Utility functions
+└── app.js               # App controller/state management

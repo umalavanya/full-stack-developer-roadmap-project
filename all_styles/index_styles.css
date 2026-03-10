@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----- NAVBAR (technologies) ----- */
+.navbar {
+    background: #1e293b;
+    color: white;
+    padding: 0.9rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: -0.3px;
+    background: #3b82f6;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+    list-style: none;
+    font-weight: 500;
+}
+
+.nav-item {
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border-radius: 40px;
+    transition: background 0.2s, color 0.2s;
+    background: transparent;
+    color: #e2e8f0;
+    font-size: 1rem;
+}
+
+.nav-item:hover {
+    background: #334155;
+    color: white;
+}
+
+.nav-item.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* ----- MAIN LAYOUT (side pane + content) ----- */
+.dashboard {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 72px);
+    /* navbar height approx */
+}
+
+/* side pane – left (15–20%) */
+.side-pane {
+    width: 18%;
+    /* between 15 and 20% */
+    background: white;
+    border-right: 1px solid #dde3e9;
+    padding: 1.8rem 1rem;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.02);
+    transition: width 0.1s;
+}
+
+.side-pane h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+}
+
+.subject-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.subject-item {
+    padding: 0.9rem 1rem 0.9rem 1.2rem;
+    border-radius: 16px;
+    font-weight: 500;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-left: 4px solid transparent;
+    background-color: #f8fafc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    word-break: break-word;
+}
+
+.subject-item:hover {
+    background: #eef2f6;
+    border-left-color: #94a3b8;
+}
+
+.subject-item.active-subject {
+    background: #e0f2fe;
+    border-left-color: #0284c7;
+    font-weight: 600;
+    color: #0c4a6e;
+}
+
+/* main content area – right side */
+.main-area {
+    flex: 1;
+    background: #f9fcff;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+.content-card {
+    background: white;
+    border-radius: 32px;
+    padding: 2.2rem 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 20px 35px -8px rgba(0, 34, 64, 0.1);
+    border: 1px solid #e9edf2;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.2px;
+}
+
+.content-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0b1e33;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.content-description {
+    color: #334155;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid #3b82f6;
+    padding-left: 1.5rem;
+    background: #f0f7ff;
+    padding: 1.2rem 1.8rem;
+    border-radius: 20px;
+}
+
+.roadmap-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 2rem 0 1rem;
+}
+
+.step {
+    background: #f6f9fe;
+    padding: 1.2rem 1.8rem;
+    border-radius: 20px;
+    border: 1px solid #dee9f2;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.step-badge {
+    background: #1e293b;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60%;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a2634;
+}
+
+.empty-state {
+    color: #6c7a8e;
+    font-style: italic;
+    background: #f1f5f9;
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #d9e2ef, transparent);
+    margin: 2rem 0 1.5rem;
+}
+
+.footer-hint {
+    color: #5f6c80;
+    font-size: 0.95rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* mobile/responsive tweaks */
+@media (max-width: 750px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .side-pane {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #dde3e9;
+    }
+
+    .navbar {
+        gap: 1rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .main-area {
+        padding: 1.5rem;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+}
